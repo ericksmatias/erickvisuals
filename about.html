@@ -295,114 +295,52 @@ Na interseção entre o desenvolvimento robusto e o branding estratégico, diver
                 </div>
             </div>
         </div>
-    </section>
-    <script src="//unpkg.com/globe.gl"></script>
-
-<section style="position: relative; width: 100%; height: 60vh; min-height: 500px; background-color: #000; overflow: hidden;">
-    <div id="globeViz"></div>
+    <section id="google-earth-container" style="position: relative; width: 100%; height: 60vh; min-height: 500px; background-color: #000; overflow: hidden;">
     
-    <div style="position: absolute; bottom: 30px; left: 30px; pointer-events: none; z-index: 10;">
-        <h3 style="color: #fff; margin: 0; font-family: sans-serif; font-size: 1.2rem;">Fortaleza, BR</h3>
-        <p style="color: #888; margin: 0; font-size: 0.9rem;">Base de Operações</p>
-    </div>
-
-    <section id="globe-container" style="position: relative; width: 100%; height: 60vh; min-height: 500px; background-color: #000; overflow: hidden;">
-    <div id="globe-placeholder" style="position: absolute; top:0; left:0; width:100%; height:100%; background: #050505; display: flex; align-items: center; justify-content: center; z-index: 1;">
-        <span style="color: #333; font-family: sans-serif; font-size: 0.8rem;">Carregando mapa...</span>
-    </div>
-
-    <div id="globeViz" style="opacity: 0; transition: opacity 1s ease;"></div>
-    
-    <div style="position: absolute; bottom: 30px; left: 30px; pointer-events: none; z-index: 10;">
-        <h3 style="color: #fff; margin: 0; font-family: sans-serif; font-size: 1.2rem;">Fortaleza, BR</h3>
-        <p style="color: #888; margin: 0; font-size: 0.9rem;">Base de Operações</p>
-    </div>
-
-    <style>
-        @keyframes pulse {
-            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
-    </style>
-<section id="google-earth-section" style="width: 100%; height: 60vh; overflow: hidden;">
     <iframe 
         width="100%" 
         height="100%" 
         frameborder="0" 
-        style="border:0; border-radius: 12px;" 
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31850.66810626388!2d-38.5267!3d-3.7319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr&maptype=satellite" 
+        style="border:0; filter: contrast(1.1) brightness(0.9);" 
+        src="https://maps.google.com/maps?q=-3.7319,-38.5267&t=k&z=15&ie=UTF8&iwloc=&output=embed" 
         allowfullscreen>
     </iframe>
-</section>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Configura o observador para detectar quando o elemento entra na tela
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // Se o elemento apareceu na tela
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Para de observar depois que animou
-                }
-            });
-        }, {
-            threshold: 0.2 // A animação começa quando 20% do elemento estiver visível
-        });
+    <div style="position: absolute; bottom: 30px; left: 30px; pointer-events: none; z-index: 10; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px);">
+        <h3 style="color: #fff; margin: 0; font-family: sans-serif; font-size: 1.2rem; letter-spacing: 1px;">Fortaleza, BR</h3>
+        <p style="color: #bbb; margin: 5px 0 0 0; font-size: 0.9rem; text-transform: uppercase;">Base de Operações</p>
+    </div>
 
-        // Seleciona o elemento que queremos animar
-        const target = document.querySelector('.fade-on-scroll');
-        if(target) {
-            observer.observe(target);
-        }
-    });
-</script>
-<style>
-    /* Configuração da Animação */
-    .simple-fade {
-        opacity: 0;
-        animation: fadeInNormal 5s ease-out forwards;
-    }
+    <div class="pulse-marker" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;"></div>
 
-    @keyframes fadeInNormal {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Configura o observador para detectar quando o elemento entra na tela
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // Se o elemento apareceu na tela
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Para de observar depois que animou
-                }
-            });
-        }, {
-            threshold: 0.2 // A animação começa quando 20% do elemento estiver visível
-        });
-
-        // Seleciona o elemento que queremos animar
-        const target = document.querySelector('.fade-on-scroll');
-        if(target) {
-            observer.observe(target);
-        }
-    });
-</script>
-    
     <style>
+        /* Sua animação de pulso original aplicada ao marcador central */
+        .pulse-marker {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 rgba(255, 255, 255, 0.7);
+            animation: pulse 2s infinite;
+        }
+
         @keyframes pulse {
             0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
             100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* Efeito de fade ao carregar a página */
+        #google-earth-container {
+            animation: fadeInNormal 2s ease-out forwards;
+        }
+
+        @keyframes fadeInNormal {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </section>
-
     <div class="blinking_css w-embed">
         <style>
             .blink { animation: blinker 1.1s ease infinite; }
