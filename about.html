@@ -331,84 +331,89 @@ Na interseção entre o desenvolvimento robusto e o branding estratégico, diver
         map.scrollWheelZoom.disable();
     </script>
 </section>
-<section id="logo-footer-space" style="width: 100%; padding: 100px 20px; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+<section id="logo-footer-space" style="width: 100%; padding: 100px 20px; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 
-    <h3 style="color: #666; font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 50px; text-align: center; font-weight: 600;">
+    <h3 style="color: #444; font-family: 'Segoe UI', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 60px; text-align: center; font-weight: 600; opacity: 0.7;">
         Fornecendo serviço aos melhores
     </h3>
 
-    <div class="logo-grid">
-        <div class="logo-item">
+    <div class="ghost-grid">
+        
+        <div class="ghost-item">
             <img src="midia/logo1.avif" alt="Cliente 1">
         </div>
-        <div class="logo-item">
+        
+        <div class="ghost-item">
             <img src="midia/logo2.avif" alt="Cliente 2">
         </div>
-        <div class="logo-item">
+
+        <div class="ghost-item">
             <img src="midia/logo3.avif" alt="Cliente 3">
         </div>
-        <div class="logo-item">
+
+        <div class="ghost-item">
             <img src="midia/logo4.avif" alt="Cliente 4">
         </div>
-        <div class="logo-item">
+
+        <div class="ghost-item">
             <img src="midia/logo5.avif" alt="Cliente 5">
         </div>
+
         </div>
 
     <style>
-        /* Grade flexível para organizar as logos */
-        .logo-grid {
+        /* A Grade */
+        .ghost-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 60px; /* Espaço entre as logos */
-            max-width: 1200px;
-            width: 100%;
+            gap: 20px;
+            max-width: 1000px;
         }
 
-        /* O container de cada logo */
-        .logo-item {
-            width: 140px; /* Largura base da área da logo */
-            height: 60px;
+        /* O Espaço da Logo (A caixa vazia) */
+        .ghost-item {
+            width: 150px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico estilo Framer */
+            
+            /* Borda ultra sutil para saber que tem algo ali (opcional, pode tirar se quiser 100% preto) */
+            border: 1px solid #111; 
+            background: transparent;
+            
+            cursor: crosshair; /* Cursor de "mira" para dar um ar técnico */
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Animação suave */
         }
 
-        /* A imagem da logo em si */
-        .logo-item img {
-            max-width: 100%;
-            max-height: 100%;
+        /* A Imagem da Logo - INVISÍVEL POR PADRÃO */
+        .ghost-item img {
+            max-width: 80%;
+            max-height: 60%;
             object-fit: contain;
             
-            /* Estado Inicial: Preto e branco e meio apagado */
-            filter: grayscale(100%) brightness(0.7) contrast(1.2); 
-            opacity: 0.5;
+            opacity: 0; /* O SEGREDO: Totalmente invisível */
+            transform: scale(0.8) translateY(10px); /* Levemente menor e para baixo */
+            filter: blur(5px); /* Desfocada */
             
-            transition: all 0.4s ease;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* --- O EFEITO AO PASSAR O MOUSE --- */
-        .logo-item:hover {
-            transform: scale(1.15); /* Aumenta um pouco (Pop) */
+        /* --- O QUE ACONTECE AO PASSAR O MOUSE --- */
+        
+        /* 1. A Caixa acende */
+        .ghost-item:hover {
+            border-color: #333;
+            background: #0a0a0a;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05); /* Leve brilho de fundo */
         }
 
-        .logo-item:hover img {
-            /* Restaura a cor original (ou fica branco brilhante se a logo for branca) */
-            filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); 
-            opacity: 1;
-        }
-
-        /* Ajuste para Celulares */
-        @media (max-width: 768px) {
-            .logo-grid {
-                gap: 30px;
-            }
-            .logo-item {
-                width: 100px;
-                height: 50px;
-            }
+        /* 2. A Logo aparece */
+        .ghost-item:hover img {
+            opacity: 1; /* Fica visível */
+            transform: scale(1) translateY(0); /* Cresce para o tamanho normal */
+            filter: blur(0px) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* Fica nítida e com brilho intenso */
         }
     </style>
 </section>
