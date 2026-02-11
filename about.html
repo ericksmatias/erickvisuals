@@ -325,59 +325,70 @@ Na interseção entre o desenvolvimento robusto e o branding estratégico, diver
 
         </div>
 
-    <style>
-        /* A Grade */
+ <style>
+        /* A Grade - Agora mais larga */
         .ghost-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            max-width: 1000px;
+            gap: 30px; /* Mais espaço entre os blocos */
+            max-width: 1400px; /* Permite que o grid ocupe mais tela */
+            width: 100%;
         }
 
-        /* O Espaço da Logo (A caixa vazia) */
+        /* O Bloco "Fantasma" - AGORA BEM MAIOR */
         .ghost-item {
-            width: 150px;
-            height: 80px;
+            width: 280px;  /* Dobro do tamanho anterior */
+            height: 160px; /* Mais alto */
             display: flex;
             align-items: center;
             justify-content: center;
             
-            /* Borda ultra sutil para saber que tem algo ali (opcional, pode tirar se quiser 100% preto) */
+            /* Borda ultra fina e quase invisível (#111) para guiar o usuário */
             border: 1px solid #111; 
             background: transparent;
+            border-radius: 4px; /* Leve arredondamento nas pontas */
             
-            cursor: crosshair; /* Cursor de "mira" para dar um ar técnico */
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Animação suave */
+            cursor: crosshair; 
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* A Imagem da Logo - INVISÍVEL POR PADRÃO */
+        /* A Imagem - Ajustada para o novo tamanho */
         .ghost-item img {
-            max-width: 80%;
+            max-width: 70%; /* A logo ocupa 70% do box para ficar elegante */
             max-height: 60%;
             object-fit: contain;
             
-            opacity: 0; /* O SEGREDO: Totalmente invisível */
-            transform: scale(0.8) translateY(10px); /* Levemente menor e para baixo */
-            filter: blur(5px); /* Desfocada */
+            opacity: 0; /* Invisível */
+            transform: scale(0.9) translateY(20px); /* Começa menor e mais embaixo */
+            filter: blur(8px); /* Bem desfocada */
             
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        /* --- O QUE ACONTECE AO PASSAR O MOUSE --- */
+        /* --- HOVER (MOUSE EM CIMA) --- */
         
-        /* 1. A Caixa acende */
         .ghost-item:hover {
-            border-color: #333;
-            background: #0a0a0a;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05); /* Leve brilho de fundo */
+            border-color: #333; /* Borda fica cinza escuro */
+            background: radial-gradient(circle at center, #111 0%, #000 100%); /* Fundo sutil */
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            transform: translateY(-5px); /* O bloco inteiro flutua um pouco pra cima */
         }
 
-        /* 2. A Logo aparece */
         .ghost-item:hover img {
-            opacity: 1; /* Fica visível */
-            transform: scale(1) translateY(0); /* Cresce para o tamanho normal */
-            filter: blur(0px) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* Fica nítida e com brilho intenso */
+            opacity: 1; 
+            transform: scale(1.1) translateY(0); /* A logo cresce um pouco (10%) */
+            filter: blur(0px) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Brilho */
+        }
+        
+        /* Ajuste para celular para não quebrar */
+        @media (max-width: 768px) {
+            .ghost-item {
+                width: 160px;
+                height: 100px;
+            }
         }
     </style>
 </section>
