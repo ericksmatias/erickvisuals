@@ -309,8 +309,8 @@ Na interseção entre o desenvolvimento robusto e o branding estratégico, diver
     <div id="map" style="width: 100%; height: 100%; z-index: 1;"></div>
 
     <div style="position: absolute; top: 30px; left: 30px; z-index: 1000; pointer-events: none; background: rgba(0,0,0,0.7); padding: 15px; border-left: 3px solid #fff;">
-        <h3 style="color: #fff; margin: 0; font-family: 'Segoe UI', sans-serif; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Monitoramento Aéreo</h3>
-        <p style="color: #888; margin: 5px 0 0 0; font-size: 0.8rem;">Setor: Fortaleza, BR / Hub Nordeste</p>
+        <h3 style="color: #fff; margin: 0; font-family: 'Segoe UI', sans-serif; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Eu comi a sua prima</h3>
+        <p style="color: #888; margin: 5px 0 0 0; font-size: 0.8rem;">Walysu</p>
     </div>
 
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; box-shadow: inset 0 0 100px #000; pointer-events: none; z-index: 900;"></div>
@@ -327,29 +327,13 @@ Na interseção entre o desenvolvimento robusto e o branding estratégico, diver
             maxZoom: 19
         }).addTo(map);
 
-        // Ícone de avião personalizado (SVG simples)
-        var planeIcon = L.divIcon({
-            className: 'custom-plane',
-            html: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#f0ad4e" width="24px" height="24px" style="transform: rotate(45deg); filter: drop-shadow(0 0 5px rgba(240, 173, 78, 0.8));"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>',
-            iconSize: [24, 24],
-            iconAnchor: [12, 12]
-        });
-
-        // Adiciona alguns "aviões" falsos ao redor de Fortaleza para compor o visual
-        // Posição 1: Chegando no Pinto Martins
-        L.marker([-3.77, -38.53], {icon: planeIcon}).addTo(map);
-        // Posição 2: Sobrevoando o mar
-        L.marker([-3.68, -38.45], {icon: planeIcon}).addTo(map);
-        // Posição 3: Zona Oeste
-        L.marker([-3.75, -38.60], {icon: planeIcon}).addTo(map);
-
         // Desabilita interação de scroll para não atrapalhar a navegação do site
         map.scrollWheelZoom.disable();
     </script>
 </section>
 <section id="logo-footer-space" style="width: 100%; padding: 80px 0; background-color: #000; display: flex; justify-content: center; align-items: center;">
-    <div style="border: 1px dashed #333; padding: 20px; color: #444; font-family: sans-serif;">
-        [ESPAÇO RESERVADO PARA LOGO]
+    <div style="border: 1px dashed #333; padding: 20px; color: #444; font-family: sans-serif; 
+        <img src="midia/footerlogo.avif"
     </div>
 </section>
     <div class="blinking_css w-embed">
