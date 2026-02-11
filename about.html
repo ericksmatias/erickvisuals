@@ -326,80 +326,80 @@ Na interseção entre o desenvolvimento robusto e o branding estratégico, diver
         }
     </style>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const container = document.getElementById('globe-container');
-            let globeLoaded = false;
-            let world;
+    <div id="globe-container" style="width: 100%; height: 60vh; position: relative; overflow: hidden;">
+    <div id="globe-placeholder">Carregando Terra 3D...</div>
+    <div id="cesiumContainer" style="width: 100%; height: 100%; opacity: 0; transition: opacity 1s;"></div>
+</div>
 
-            // Função que inicia o globo
-            function initGlobe() {
-                const FORTALEZA_COORDS = { lat: -3.7319, lng: -38.5267 };
+<link href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
-                world = Globe()
-                (document.getElementById('globeViz'))
-                .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-                .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-                .showAtmosphere(true)
-                .atmosphereColor('#3a228a')
-                .atmosphereAltitude(0.15)
-                .htmlElementsData([{
-                    lat: FORTALEZA_COORDS.lat,
-                    lng: FORTALEZA_COORDS.lng,
-                    size: 30,
-                    color: '#ffffff'
-                }])
-                .htmlElement(d => {
-                    const el = document.createElement('div');
-                    el.innerHTML = `
-                        <div style="width: 12px; height: 12px; background: #fff; border-radius: 50%; box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.8); animation: pulse 2s infinite;"></div>
-                    `;
-                    return el;
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById('globe-container');
+    let loaded = false;
+
+    function initCesium() {
+        // Injeta o script do Cesium dinamicamente
+        const script = document.createElement('script');
+        script.src = 'https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js';
+        
+        script.onload = () => {
+            // Inicializa o visualizador sem precisar de conta/token para o básico
+            const viewer = new Cesium.Viewer('cesiumContainer', {
+                terrainProvider: Cesium.createWorldTerrain(), // Relevo 3D
+                animation: false,
+                timeline: false,
+                baseLayerPicker: false,
+                geocoder: false,
+                homeButton: false,
+                infoBox: false,
+                sceneModePicker: false,
+                selectionIndicator: false,
+                navigationHelpButton: false,
+                // Usando imagens do OpenStreetMap (Grátis e sem chaves)
+                imageryProvider: new Cesium.OpenStreetMapImageryProvider({
+                    url: 'https://a.tile.openstreetmap.org/'
                 })
-                .pointOfView({ lat: -3.7319, lng: -38.5267, altitude: 1.8 }, 1000);
+            });
 
-                world.controls().autoRotate = true;
-                world.controls().autoRotateSpeed = 0.5;
-                world.controls().enableZoom = false;
+            // Configura a posição inicial (Fortaleza) de cima
+            const fortress = Cesium.Cartesian3.fromDegrees(-38.5267, -3.7319, 20000000); // 20.000km de altura (Globo)
+            
+            viewer.camera.setView({
+                destination: fortress
+            });
 
-                // Ajuste responsivo
-                const resizeObserver = new ResizeObserver(() => {
-                    world.width(window.innerWidth);
-                    world.height(window.innerHeight * 0.6);
+            // Mostra o mapa
+            document.getElementById('cesiumContainer').style.opacity = '1';
+            document.getElementById('globe-placeholder').style.display = 'none';
+
+            // Animação: "Mergulho" do espaço até Fortaleza
+            setTimeout(() => {
+                viewer.camera.flyTo({
+                    destination: Cesium.Cartesian3.fromDegrees(-38.5267, -3.7319, 2000), // 2km de altura (Ruas)
+                    duration: 5,
+                    orientation: {
+                        pitch: Cesium.Math.toRadians(-45.0) // Inclinação para ver o horizonte
+                    }
                 });
-                resizeObserver.observe(container);
+            }, 1000);
+        };
+        document.body.appendChild(script);
+    }
 
-                // Mostra o globo suavemente
-                document.getElementById('globeViz').style.opacity = '1';
-                document.getElementById('globe-placeholder').style.display = 'none';
+    // Carrega quando estiver visível
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !loaded) {
+                loaded = true;
+                initCesium();
             }
-
-            // Observer: Só carrega o script pesado quando o usuário chegar perto do rodapé
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !globeLoaded) {
-                        globeLoaded = true;
-                        
-                        // Injeta o script do Globe.gl dinamicamente
-                        const script = document.createElement('script');
-                        script.src = '//unpkg.com/globe.gl';
-                        script.onload = () => {
-                            // Pequeno delay para garantir que o script processou
-                            setTimeout(initGlobe, 100); 
-                        };
-                        document.body.appendChild(script);
-                    }
-                    
-                    // Otimização Extra: Pausa a rotação se o globo não estiver visível
-                    if (world) {
-                        world.controls().autoRotate = entry.isIntersecting;
-                    }
-                });
-            }, { rootMargin: "200px" }); // Começa a carregar 200px antes de chegar no elemento
-
-            observer.observe(container);
         });
-    </script>
+    }, { rootMargin: "200px" });
+
+    observer.observe(container);
+});
+</script>
 </section>
 
 <script>
@@ -533,18 +533,6 @@ Na interseção entre o desenvolvimento robusto e o branding estratégico, diver
             }
             toTopButton.addEventListener('click', scrollToTop);
         }
-    });
-    </script>
-
-    <script>
-    // Manifesto Toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const manifestoLinks = document.querySelectorAll('a[href$="#"]'); // Ajuste seletor se necessário
-        const manifestoModal = document.querySelector('.manifesto_fixed');
-        const closeBtn = document.querySelector('.close_button');
-
-        // Lógica simples para abrir manifesto se o link for clicado (pode precisar ajuste dependendo do Webflow original)
-        // O Webflow original usa interações complexas (w-mod-ix), mas o CSS inline já esconde.
     });
     </script>
 
