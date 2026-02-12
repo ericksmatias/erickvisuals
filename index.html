@@ -37,6 +37,35 @@
     .splide__track { overflow: visible; }
     .splide__arrows { display: none; }
     .splide__pagination { display: none; }
+
+    /* --- CSS DA ANIMAÇÃO DE ENTRADA DO SITE --- */
+    /* Isso garante que o site comece invisível e só apareça após a intro */
+    
+    /* Estado inicial (oculto e deslocado para baixo) */
+    body:not(.site-loaded) .header, 
+    body:not(.site-loaded) .hero__h {
+      opacity: 0;
+      transform: translateY(40px);
+      pointer-events: none; /* Evita cliques acidentais antes de aparecer */
+    }
+
+    /* Definição da transição suave */
+    .header, .hero__h {
+      transition: opacity 1.5s ease-out, transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Estado final (visível e na posição original) */
+    body.site-loaded .header,
+    body.site-loaded .hero__h {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Pequeno atraso para a hero section aparecer depois do menu (efeito cascata) */
+    body.site-loaded .hero__h {
+      transition-delay: 0.2s;
+    }
   </style>
 
   <script type="text/javascript">
@@ -68,188 +97,182 @@
 </head>
 
 <body class="body">
+  
   <div id="cine-intro-wrapper">
   
-  <video id="cine-video" autoplay muted playsinline>
-    <source src="midia/fundo1.mp4" type="video/mp4">
-  </video> 
+    <video id="cine-video" autoplay muted playsinline>
+      <source src="midia/fundo1.mp4" type="video/mp4">
+    </video> 
 
-  <div id="cine-mask">
-    <h1 id="cine-text"></h1>
+    <div id="cine-mask">
+      <h1 id="cine-text"></h1>
+    </div>
+
   </div>
 
-</div>
+  <style>
+    /* Bloqueia o scroll do site durante a intro */
+    body.intro-active {
+      overflow: hidden;
+      height: 100vh;
+    }
 
-<style>
-  /* Bloqueia o scroll do site durante a intro */
-  body.intro-active {
-    overflow: hidden;
-    height: 100vh;
-  }
+    /* Container Geral (Cobre tudo) */
+    #cine-intro-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 99999; /* Fica acima de tudo */
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: all; 
+    }
 
-  /* Container Geral (Cobre tudo) */
-  #cine-intro-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 99999; /* Fica acima de tudo */
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: all; /* Garante que ninguém clica no site */
-  }
+    /* O Vídeo de Fundo */
+    #cine-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0; /* Começa invisível para evitar glitch */
+      transition: opacity 0.5s ease;
+    }
 
-  /* O Vídeo de Fundo */
-  #cine-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    opacity: 0; /* Começa invisível para evitar glitch */
-    transition: opacity 0.5s ease;
-  }
+    /* A Máscara Preta */
+    #cine-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: #000; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      mix-blend-mode: multiply; 
+      transform-origin: center center;
+    }
 
-  /* A Máscara Preta */
-  #cine-mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background-color: #000; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* A MÁGICA: mix-blend-mode multiply */
-    /* Tudo que for BRANCO nesta layer ficará TRANSPARENTE, revelando o vídeo */
-    /* Tudo que for PRETO continuará PRETO */
-    mix-blend-mode: multiply; 
-    transform-origin: center center;
-  }
+    /* O Texto (Que vira o buraco) */
+    #cine-text {
+      font-family: 'Arial Black', sans-serif; 
+      font-size: 20vw; 
+      text-transform: uppercase;
+      color: white; 
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      line-height: 1;
+      opacity: 0; 
+      white-space: nowrap;
+      will-change: transform, opacity;
+    }
 
-  /* O Texto (Que vira o buraco) */
-  #cine-text {
-    font-family: 'Arial Black', sans-serif; /* Use sua fonte Bold aqui */
-    font-size: 20vw; /* Tamanho responsivo */
-    text-transform: uppercase;
-    color: white; /* O branco vira transparente por causa do multiply */
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    line-height: 1;
-    opacity: 0; /* Começa oculto */
-    white-space: nowrap;
-    will-change: transform, opacity;
-  }
-
-  /* Classes de Animação */
-  .fade-in-text {
-    animation: textAppear 0.1s forwards;
-  }
-  
-  @keyframes textAppear {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  /* O Zoom final "entrando" na letra */
-  .zoom-hole {
-    transition: transform 1.5s cubic-bezier(0.7, 0, 0.3, 1);
-    transform: scale(50); /* Aumenta 50x para entrar no buraco */
-  }
-
-  /* Fade out final do container */
-  .intro-fade-out {
-    opacity: 0;
-    transition: opacity 1s ease;
-    pointer-events: none;
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const wrapper = document.getElementById('cine-intro-wrapper');
-    const mask = document.getElementById('cine-mask');
-    const textElement = document.getElementById('cine-text');
-    const video = document.getElementById('cine-video');
-    const body = document.body;
-
-    // Palavras da sequência
-    const words = ["TRAGA", "O", "CINEMA", "PARA", "DENTRO", "DA", "SUA", "MARCA"];
+    /* Classes de Animação */
+    .fade-in-text {
+      animation: textAppear 0.1s forwards;
+    }
     
-    // Configurações de tempo (em milissegundos)
-    const wordDuration = 500; // Tempo de leitura de cada palavra
-    const finalMotionDuration = 500; // Tempo do vídeo tocando limpo após o zoom
-
-    // Trava o scroll
-    body.classList.add('intro-active');
-
-    // Mostra o vídeo (fade-in inicial)
-    setTimeout(() => { video.style.opacity = '1'; }, 100);
-
-    let currentWordIndex = 0;
-
-    function showNextWord() {
-      if (currentWordIndex < words.length) {
-        // 1. Atualiza o texto
-        textElement.innerText = words[currentWordIndex];
-        
-        // 2. Reseta a animação (remove e adiciona a classe)
-        textElement.classList.remove('fade-in-text');
-        void textElement.offsetWidth; // Trigger reflow
-        textElement.classList.add('fade-in-text');
-
-        // Se for a última palavra ("MARCA"), inicia a sequência de saída
-        if (currentWordIndex === words.length - 1) {
-          setTimeout(startZoomSequence, 1200); // Espera um pouco na palavra MARCA
-        } else {
-          // Próxima palavra
-          setTimeout(showNextWord, wordDuration);
-        }
-        
-        currentWordIndex++;
-      }
+    @keyframes textAppear {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    function startZoomSequence() {
-      // 1. Zoom na máscara preta (entrando na letra branca/transparente)
-      mask.classList.add('zoom-hole');
-
-      // 2. Após o zoom (quando a tela estiver toda "vídeo"), removemos a máscara
-      setTimeout(() => {
-        mask.style.opacity = '0'; // Garante que a máscara sumiu
-        
-        // Agora o vídeo está "full screen" limpo, tocando o motion da marca.
-        // Esperamos o tempo do motion final.
-        setTimeout(finishIntro, finalMotionDuration);
-        
-      }, 1000); // Sincronizado com o transition do CSS (.zoom-hole)
+    /* O Zoom final "entrando" na letra */
+    .zoom-hole {
+      transition: transform 1.5s cubic-bezier(0.7, 0, 0.3, 1);
+      transform: scale(50); 
     }
 
-    function finishIntro() {
-      // Fade out de todo o container de intro
-      wrapper.classList.add('intro-fade-out');
+    /* Fade out final do container */
+    .intro-fade-out {
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const wrapper = document.getElementById('cine-intro-wrapper');
+      const mask = document.getElementById('cine-mask');
+      const textElement = document.getElementById('cine-text');
+      const video = document.getElementById('cine-video');
+      const body = document.body;
+
+      // Palavras da sequência
+      const words = ["TRAGA", "O", "CINEMA", "PARA", "DENTRO", "DA", "SUA", "MARCA"];
       
-      // Destrava o scroll do site
-      body.classList.remove('intro-active');
+      // Configurações de tempo (em milissegundos)
+      const wordDuration = 500; 
+      const finalMotionDuration = 500; 
 
-      // Remove o elemento do DOM para não pesar a memória
-      setTimeout(() => {
-        wrapper.remove();
-      }, 1000); // Tempo do fade out
-    }
+      // Trava o scroll
+      body.classList.add('intro-active');
 
-    // Iniciar após um pequeno delay para garantir carregamento
-    setTimeout(showNextWord, 500);
-  });
-</script>
+      // Mostra o vídeo (fade-in inicial)
+      setTimeout(() => { video.style.opacity = '1'; }, 100);
+
+      let currentWordIndex = 0;
+
+      function showNextWord() {
+        if (currentWordIndex < words.length) {
+          textElement.innerText = words[currentWordIndex];
+          textElement.classList.remove('fade-in-text');
+          void textElement.offsetWidth; // Trigger reflow
+          textElement.classList.add('fade-in-text');
+
+          if (currentWordIndex === words.length - 1) {
+            setTimeout(startZoomSequence, 1200); 
+          } else {
+            setTimeout(showNextWord, wordDuration);
+          }
+          
+          currentWordIndex++;
+        }
+      }
+
+      function startZoomSequence() {
+        mask.classList.add('zoom-hole');
+
+        setTimeout(() => {
+          mask.style.opacity = '0'; 
+          
+          setTimeout(finishIntro, finalMotionDuration);
+          
+        }, 1000); 
+      }
+
+      function finishIntro() {
+        // Fade out de todo o container de intro
+        wrapper.classList.add('intro-fade-out');
+        
+        // Destrava o scroll do site
+        body.classList.remove('intro-active');
+
+        // --- DISPARA A ENTRADA DO SITE ---
+        // Adiciona a classe que faz o Header e o Texto subirem suavemente
+        setTimeout(() => {
+          body.classList.add('site-loaded');
+        }, 100);
+
+        // Remove o elemento do DOM para não pesar a memória
+        setTimeout(() => {
+          wrapper.remove();
+        }, 1000); 
+      }
+
+      setTimeout(showNextWord, 500);
+    });
+  </script>
   <div class="header">
     <div class="wrapper__h">
       <div class="flex__h">
