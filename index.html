@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Erick Matias | Engenharia de Software e Direção de Arte</title>
+<meta name="description" content="Estudante de Engenharia de Software em Fortaleza. Desenvolvedor full-stack e diretor de arte, com sistemas reais em produção para clientes."/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#07070a"/>
+
+<!-- Redes sociais (para o preview no WhatsApp/LinkedIn funcionar, troque por URLs absolutas depois de publicar) -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Erick Matias | Engenharia de Software e Direção de Arte"/>
+<meta property="og:description" content="Estudante de Engenharia de Software, full-stack e direção de arte, com sistemas reais em produção para clientes."/>
+<meta property="og:image" content="assets/logo.png"/>
+<meta property="og:site_name" content="Erick Matias"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link rel="icon" href="assets/logo.png" type="image/png"/>
+<link rel="apple-touch-icon" href="assets/logo.png"/>
+
+<link rel="preload" href="assets/fonts/urbanist-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="css/style.css"/>
+<script>document.documentElement.classList.add('js');setTimeout(function(){var p=document.getElementById('preloader');if(p){p.style.display='none';document.body.classList.remove('is-loading')}},6000)</script>
+</head>
+<body class="is-loading">
+
+<div id="preloader" aria-hidden="true"><div class="pl-wrap"><span class="pl-ring"></span><img src="assets/logo.png" alt="" width="64" height="64"/></div></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container">
+    <div class="nav-pill">
+      <a href="#top" class="nav-logo" aria-label="Erick Matias, início">
+        <img src="assets/logo.png" alt="" width="26" height="26"/>
+        <span>ERICK MATIAS</span>
+      </a>
+      <div class="nav-status"><i class="dot"></i>DISPONÍVEL PARA PROJETOS</div>
+      <div class="nav-right">
+        <a href="#contato" class="btn btn-primary btn-sm nav-cta" data-menu-link>
+          <span class="btn-text"><span>Iniciar projeto</span><span>Iniciar projeto</span></span>
+          <span class="btn-icon"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- menu em tela cheia -->
+<nav class="menu" id="menu" aria-label="Menu principal">
+  <div class="menu-bg"></div>
+  <div class="container menu-grid">
+    <div class="menu-col">
+      <div class="menu-title">Navegação</div>
+      <a href="#top" class="menu-link" data-menu-link><span class="roll"><span>Início</span><span>Início</span></span></a>
+      <a href="#sobre" class="menu-link" data-menu-link><span class="roll"><span>Sobre</span><span>Sobre</span></span></a>
+      <a href="#projetos" class="menu-link" data-menu-link><span class="roll"><span>Projetos</span><span>Projetos</span></span></a>
+      <a href="#referencias" class="menu-link" data-menu-link><span class="roll"><span>Referências</span><span>Referências</span></span></a>
+      <a href="#servicos" class="menu-link" data-menu-link><span class="roll"><span>O que faço</span><span>O que faço</span></span></a>
+      <a href="#stack" class="menu-link" data-menu-link><span class="roll"><span>Stack</span><span>Stack</span></span></a>
+      <a href="#faq" class="menu-link" data-menu-link><span class="roll"><span>Perguntas</span><span>Perguntas</span></span></a>
+      <a href="#contato" class="menu-link" data-menu-link><span class="roll"><span>Contato</span><span>Contato</span></span></a>
+    </div>
+    <div class="menu-col menu-col-side">
+      <div class="menu-title">Contato</div>
+      <a href="mailto:erickmkdev@gmail.com" class="menu-side-link">erickmkdev@gmail.com</a>
+      <a class="menu-side-link" role="button" tabindex="0" data-soon>GitHub</a>
+      <a class="menu-side-link" role="button" tabindex="0" data-soon>Instagram</a>
+      <div class="menu-title" style="margin-top:36px">Localização</div>
+      <p class="menu-side-text">Fortaleza, CE, Brasil<br/>-3.73° S · -38.53° O</p>
+    </div>
+  </div>
+</nav>
+
+<!-- botão flutuante -->
+<a href="#contato" class="float-btn" id="floatBtn" data-menu-link>
+  <span class="float-avatar"><img src="assets/rickwalppaper.avif" alt="" width="44" height="44"/></span>
+  <span class="float-text"><span class="roll"><span>Vamos conversar</span><span>Vamos conversar</span></span></span>
+</a>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-media" data-hero="media">
+    <video class="hero-video" autoplay muted playsinline loop preload="metadata" poster="assets/hero-poster.jpg" disablepictureinpicture>
+      <source src="assets/fundo1.mp4" type="video/mp4"/>
+    </video>
+    <div class="hero-shade"></div>
+    <div class="hero-dots"></div>
+  </div>
+  <div class="hero-blobs" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="mono-eyebrow" data-hero="fade">FORTALEZA, BRASIL</span>
+        <h1 class="hero-title" data-hero="title">Engenharia e direção de arte para produtos digitais.</h1>
+        <p class="hero-sub" data-hero="fade">Estudante de Engenharia de Software em Fortaleza. Já entrego sistemas reais para clientes, do banco de dados à interface.</p>
+        <div class="hero-actions" data-hero="fade">
+          <a href="#projetos" class="btn btn-primary" data-menu-link>
+            <span class="btn-text"><span>Ver projetos</span><span>Ver projetos</span></span>
+            <span class="btn-icon"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a>
+          <a href="mailto:erickmkdev@gmail.com" class="btn btn-ghost">
+            <span class="btn-text"><span>Falar comigo</span><span>Falar comigo</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-3d" id="hero3d" data-hero="fade" aria-hidden="true"><img class="hero3d-fb" src="assets/logo.png" alt="" width="340" height="340" decoding="async"/></div>
+    </div>
+  </div>
+
+  <div class="hero-bottom" data-hero="fade">
+    <div class="container">
+      <div class="hero-info">
+        <span>©2026</span>
+        <span class="hero-plus"><i>+</i><i>+</i><i>+</i><i>+</i></span>
+        <span>-3.73° S · -38.53° O</span>
+      </div>
+      <div class="ticker ticker-sm" data-marquee data-speed="40">
+        <div class="ticker-track">
+          <span>Next.js</span><span>Supabase</span><span>Direção de Arte</span><span>Motion &amp; 3D</span><span>Postgres + RLS</span><span>Integrações de API</span><span>Design Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTES / PARCERIAS ============ -->
+<section class="partners section" id="clientes">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Clientes &amp; trabalhos</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <div class="partners-rows" data-anim="fade-up">
+      <div class="marquee" data-marquee data-speed="55">
+        <div class="marquee-track">
+          <div class="client-pill"><b>Divina Picanha</b><span>Cliente · 2026</span><em>Sistemas · Banco de Dados · Desenvolvimento</em></div>
+          <div class="client-pill"><b>Partido Missão</b><span>Cliente · 2025</span><em>Arquitetura de Dados · Segurança · PostgreSQL</em></div>
+          <div class="client-pill"><b>Privado</b><span>Cliente · 2025</span><em>Frontend · Identidade Visual · Chart.js</em></div>
+          <div class="client-pill"><b>Ipaporanga Notícias</b><span>Cliente · Em andamento</span><em>Frontend · Portal de notícias · Blogger</em></div>
+          <div class="client-pill"><b>Doçuras de Helena</b><span>Cliente · Em andamento</span><em>Site · Identidade Visual · WhatsApp</em></div>
+          <div class="client-pill"><i class="pill-logo dark"><img src="assets/img/logos/gr6-filmes.webp" alt="" loading="lazy"/></i><b>GR6 Explode</b><span>Cliente · 2025</span><em>Direção de Arte · Identidade Visual</em></div>
+          <div class="client-pill"><i class="pill-logo"><img src="assets/img/logos/lakma.webp" alt="" loading="lazy"/></i><b>Lakma Dermocosméticos</b><span>Cliente · 2025</span><em>Branding · Identidade Visual</em></div>
+          <div class="client-pill"><i class="pill-logo"><img src="assets/img/logos/jt-express.webp" alt="" loading="lazy"/></i><b>J&amp;T Express</b><span>Cliente · 2025</span><em>Criação Visual · Campanhas</em></div>
+          <div class="client-pill"><i class="pill-logo"><img src="assets/img/logos/diamond-digital.webp" alt="" loading="lazy"/></i><b>Diamond Digital</b><span>Parceiro · 2024</span><em>Estratégia &amp; Design</em></div>
+          <div class="client-pill"><b>Grand Divina</b><span>Cliente · 2026</span><em>Branding · Identidade Visual</em></div>
+        </div>
+      </div>
+      <div class="marquee marquee-rev" data-marquee data-speed="45">
+        <div class="marquee-track">
+          <span class="stack-word">Next.js 14</span><span class="stack-word">Supabase</span><span class="stack-word">PostgreSQL</span><span class="stack-word">Tailwind CSS</span>
+          <span class="stack-word">Three.js</span><span class="stack-word">GSAP</span><span class="stack-word">Vercel</span><span class="stack-word">Chart.js</span>
+        </div>
+      </div>
+      <i class="marquee-fade left"></i><i class="marquee-fade right"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="about section" id="sobre">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Sobre</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+
+    <div class="about-head">
+      <h2 class="statement" data-anim="words">Eu sou Erick Matias. Enquanto a maioria se perde em termos técnicos que não pagam contas, meu foco é construir ativos digitais que geram autoridade, escala e lucro.</h2>
+      <div class="about-head-btn" data-anim="fade-up">
+        <a href="#servicos" class="btn btn-primary" data-menu-link>
+          <span class="btn-text"><span>O que eu faço</span><span>O que eu faço</span></span>
+          <span class="btn-icon"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- números: 3 clientes = cards marcados "Cliente" nos projetos; confirme antes de publicar -->
+    <div class="counters" data-anim="stagger">
+      <div class="counter-card"><div class="counter-label">Ano de Eng. de Software, concluindo</div><div class="counter-num"><span data-count="1">0</span><sup>º</sup></div></div>
+      <div class="counter-card"><div class="counter-label">Clientes atendidos</div><div class="counter-num"><span data-count="3">0</span></div></div>
+      <div class="counter-card"><div class="counter-label">Sistemas em produção</div><div class="counter-num"><span data-count="2">0</span></div></div>
+      <div class="counter-card"><div class="counter-label">Projetos em andamento</div><div class="counter-num"><span data-count="2">0</span></div></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-left" data-anim="fade-up">
+        <div class="about-photo">
+          <img src="assets/rickwalppaper.avif" alt="Erick Matias" width="800" height="800" loading="lazy"/>
+          <div class="about-photo-meta">
+            <b>Erick Matias</b>
+            <span>Eng. de Software · Direção de Arte</span>
+            <span>Fortaleza, Brasil</span>
+          </div>
+        </div>
+        <p>Concluindo o primeiro ano de Engenharia de Software, uso a programação como ferramenta de negócios, não como passatempo. Meu jogo é velocidade e execução de ponta a ponta: já coloquei no ar operações digitais para empresas reais, portais de notícias e sistemas desenhados para destravar vendas e gestão.</p>
+        <p>Do banco ao pixel, eu cuido de tudo. Modelagem em Postgres com RLS no Supabase, APIs e integrações (como a API Merchant do iFood e o Gemini), front-end em Next.js, animação com GSAP e Three.js, e a identidade visual vinda de Blender e After Effects. Deploy na Vercel e no GitHub Pages, com versionamento desde o primeiro commit.</p>
+        <p>Não entrego apenas projetos, entrego vantagem competitiva. Se você quer alguém acomodado para cumprir tabela, o mercado está cheio. Se quer construir algo agressivo para dominar o seu espaço, estamos falando a mesma língua.</p>
+        <blockquote class="catchphrase">Velocidade e execução de ponta a ponta.</blockquote>
+      </div>
+
+      <div class="about-right">
+        <div class="mono-eyebrow" style="margin-bottom:28px" data-anim="fade-up">Como eu executo</div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          <div class="timeline-item" data-anim="fade-up">
+            <div class="timeline-dot"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z"/></svg></div>
+            <div><div class="timeline-title">Direção de arte</div><p class="timeline-desc">Identidade visual, UI dark e glass, design systems e direção criativa. O produto precisa ser bonito e fazer sentido para quem paga.</p></div>
+          </div>
+          <div class="timeline-item" data-anim="fade-up">
+            <div class="timeline-dot"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg></div>
+            <div><div class="timeline-title">Motion e 3D</div><p class="timeline-desc">GSAP, ScrollTrigger, Three.js, Blender e After Effects. Animação de interface a serviço da conversão, como neste site.</p></div>
+          </div>
+          <div class="timeline-item" data-anim="fade-up">
+            <div class="timeline-dot"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m8 21 4-4 4 4M12 17v4"/></svg></div>
+            <div><div class="timeline-title">Back-end e dados</div><p class="timeline-desc">Next.js, Supabase, Postgres com RLS, rotas de API e integrações com serviços externos, com segurança desde o desenho do banco.</p></div>
+          </div>
+          <div class="timeline-item" data-anim="fade-up">
+            <div class="timeline-dot"><svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div><div class="timeline-title">Entrega em produção</div><p class="timeline-desc">Sites, portais de notícias e sistemas de gestão no ar para empresas reais, com deploy contínuo e foco em resultado.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TICKER GRANDE ============ -->
+<section class="big-ticker" aria-hidden="true">
+  <div class="ticker" data-marquee data-speed="70">
+    <div class="ticker-track">
+      <span>PROJETAR</span><i>+</i><span>CONSTRUIR</span><i>+</i><span>ESCALAR</span><i>+</i><span>REPETIR</span><i>+</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJETOS (conteúdo idêntico ao portfólio atual) ============ -->
+<section class="projects section" id="projetos">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Trabalhos recentes</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <div class="split-head">
+      <h2 class="h2" data-anim="title">Produtos que construí do zero.</h2>
+      <div data-anim="fade-up">
+        <p class="lead">Projetos reais em desenvolvimento ativo ou já em produção.</p>
+        <div class="head-btns"><a class="icon-btn" role="button" tabindex="0" data-soon aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a><a class="icon-btn" role="button" tabindex="0" data-soon aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" class="dot"/></svg></a></div>
+      </div>
+    </div>
+
+    <!--
+      PARA TROCAR AS IMAGENS: substitua os arquivos em assets/img/projects/ mantendo o mesmo nome
+      (ou altere o src de cada <img>). Proporção ideal 16:10.
+    -->
+    <div class="project-stack">
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">01 / 10</span><span class="project-tag">Cliente · Entregue</span></div>
+            <h3 class="project-title">Grupo Don Tallento</h3>
+            <p class="project-text">Plataforma web do grupo, com o site da Divina Picanha, cardápio digital e painel de gestão. Banco de dados modelado em Postgres com acesso por papel (RLS) e publicação contínua na Vercel.</p>
+            <div class="project-chips"><span class="chip">Next.js 14</span><span class="chip">Supabase</span><span class="chip">RLS</span><span class="chip">Vercel</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/01-don-tallento.webp" alt="Mockup do site Divina Picanha" style="object-position:60% 50%" width="1800" height="1207" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">02 / 10</span><span class="project-tag">Integração de Produto</span></div>
+            <h3 class="project-title">iFood API</h3>
+            <p class="project-text">Integração direta à API Financeira/Merchant do iFood. Conexão essencial para trazer dados reais e precisos por lojista para sistemas de analytics.</p>
+            <div class="project-chips"><span class="chip">Node.js</span><span class="chip">API REST</span><span class="chip">Integração</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/03-ifood-api.webp" alt="Painel de integração com a API Merchant" width="1800" height="1125" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">03 / 10</span><span class="project-tag">Empregador / Engenharia</span></div>
+            <h3 class="project-title">Agilizone</h3>
+            <p class="project-text">Atuação corporativa em engenharia de software. Desenvolvimento prático, resolução de gargalos de performance e entrega de sistemas focados em eficiência operacional.</p>
+            <div class="project-chips"><span class="chip">Full-Stack</span><span class="chip">Deploy</span><span class="chip">Escalabilidade</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/04-agilizone.webp" alt="Painel de operações e performance" width="1800" height="1125" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">04 / 10</span><span class="project-tag">Cliente · Frontend</span></div>
+            <h3 class="project-title">Privatido</h3>
+            <p class="project-text">Site institucional multi-página para organização política. Navegação mobile, contadores animados, gráficos interativos e sistema de identidade visual completo.</p>
+            <div class="project-chips"><span class="chip">HTML/CSS/JS</span><span class="chip">Chart.js</span><span class="chip">Design System</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/05-privatido.webp" alt="Site institucional Privatido" width="1800" height="1125" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">05 / 10</span><span class="project-tag">Cliente · Arquitetura de Dados</span></div>
+            <h3 class="project-title">Partido Missão</h3>
+            <p class="project-text">Banco de dados para o sistema de coleta de assinaturas do partido. Estruturação técnica focada em registro, segurança e armazenamento em larga escala.</p>
+            <div class="project-chips"><span class="chip">PostgreSQL</span><span class="chip">Arquitetura</span><span class="chip">Segurança</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/06-partido-missao.webp" alt="Esquema de banco de dados do sistema de assinaturas" width="1800" height="1125" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">06 / 10</span><span class="project-tag">Ecossistema / IA</span></div>
+            <h3 class="project-title">Google</h3>
+            <p class="project-text">Uso prático das tecnologias de inteligência artificial do Google. O Gemini foi integrado como módulo de IA dentro de produtos próprios para processamento de dados.</p>
+            <div class="project-chips"><span class="chip">Google AI</span><span class="chip">LLM</span><span class="chip">API</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/07-google.webp" alt="Módulo de IA com Gemini API" width="1800" height="1125" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">07 / 10</span><span class="project-tag">Direção de Arte</span></div>
+            <h3 class="project-title">Stratus Sounds</h3>
+            <p class="project-text">A estética futurista da marca direta. Direção de arte proprietária aplicada em cima desse conceito para criar a interface e animações.</p>
+            <div class="project-chips"><span class="chip">UI/UX Design</span><span class="chip">Motion</span><span class="chip">Identidade Visual</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/08-stratus-sounds.webp" alt="Mockup do site Stratus Sounds" style="object-position:50% 50%" width="1800" height="1005" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <!-- Projetos adicionados: textos de Ipaporanga, Doçuras de Helena e nomadtable são rascunhos, revisar -->
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">08 / 10</span><span class="project-tag">Em andamento · Cliente</span></div>
+            <h3 class="project-title">Ipaporanga Notícias</h3>
+            <p class="project-text">Novo front-end para o portal de notícias Ipaporanga Notícias, com identidade jornalística, leitura rápida e conteúdo vindo do blog já existente. Publicação estática no GitHub Pages.</p>
+            <div class="project-chips"><span class="chip">HTML/CSS/JS</span><span class="chip">Blogger</span><span class="chip">GitHub Pages</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/09-ipaporanga.webp" alt="Mockup do site Ipaporanga Notícias" style="object-position:62% 50%" width="1800" height="1005" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">09 / 10</span><span class="project-tag">Em andamento · Cliente</span></div>
+            <h3 class="project-title">Doçuras de Helena</h3>
+            <p class="project-text">Site para a confeitaria Doçuras de Helena: vitrine de bolos e doces, identidade visual acolhedora e contato direto por WhatsApp.</p>
+            <div class="project-chips"><span class="chip">Landing Page</span><span class="chip">Identidade Visual</span><span class="chip">UI/UX Design</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/10-docuras-de-helena.webp" alt="Mockup do site Doçuras de Helena" style="object-position:58% 50%" width="1800" height="1005" loading="lazy"/></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-left">
+            <div class="project-card-top"><span class="project-num">10 / 10</span><span class="project-tag">Produto · Frontend</span></div>
+            <h3 class="project-title">nomadtable</h3>
+            <p class="project-text">Landing page do app nomadtable, que conecta viajantes solo: encontre atividades por perto, participe e faça amizades reais hoje, não um dia.</p>
+            <div class="project-chips"><span class="chip">Landing Page</span><span class="chip">UI/UX Design</span><span class="chip">Frontend</span></div>
+          </div>
+          <div class="project-card-image"><img src="assets/img/projects/11-nomadtable.webp" alt="Mockup do site nomadtable" style="object-position:55% 50%" width="1800" height="1005" loading="lazy"/></div>
+        </div>
+      </article>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ REFERÊNCIAS (do site antigo), para trocar as fotos: assets/img/references/ ============ -->
+<section class="refs section" id="referencias">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Referências</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <div class="split-head">
+      <h2 class="h2" data-anim="title">Marcas e pessoas com quem já trabalhei.</h2>
+      <p class="lead" data-anim="fade-up">Referências de direção de arte, branding e desenvolvimento. Os registros entram aqui conforme os trabalhos forem sendo publicados.</p>
+    </div>
+    <div class="refs-grid" data-anim="stagger">
+      <figure class="ref-tile">
+        <div class="ref-media"><img src="assets/img/references/lakma-palco.webp" alt="Lakma Dermocosméticos" loading="lazy"/></div>
+        <figcaption><b>Lakma Dermocosméticos</b><span>Branding · Identidade Visual</span></figcaption>
+      </figure>
+      <figure class="ref-tile">
+        <div class="ref-media"><img src="assets/img/projects/01-don-tallento.webp" alt="Divina Picanha" loading="lazy"/></div>
+        <figcaption><b>Divina Picanha</b><span>Direção de Arte · Web Design · Desenvolvimento</span></figcaption>
+      </figure>
+      <figure class="ref-tile">
+        <div class="ref-media logo dark"><img src="assets/img/logos/gr6-filmes.webp" alt="GR6 Explode" loading="lazy"/></div>
+        <figcaption><b>GR6 Explode</b><span>Direção de Arte · Identidade Visual</span></figcaption>
+      </figure>
+      <figure class="ref-tile">
+        <div class="ref-media logo"><img src="assets/img/logos/jt-express.webp" alt="J&amp;T Express" loading="lazy"/></div>
+        <figcaption><b>J&amp;T Express</b><span>Criação Visual · Campanhas</span></figcaption>
+      </figure>
+      <figure class="ref-tile">
+        <div class="ref-media logo"><img src="assets/img/logos/diamond-digital.webp" alt="Diamond Digital" loading="lazy"/></div>
+        <figcaption><b>Diamond Digital</b><span>Estratégia &amp; Design</span></figcaption>
+      </figure>
+      <figure class="ref-tile">
+        <div class="ref-media"><div class="ref-empty"><span>GR</span><em>Foto em breve</em></div></div>
+        <figcaption><b>Grand Divina</b><span>Branding · Identidade Visual</span></figcaption>
+      </figure>
+      <figure class="ref-tile">
+        <div class="ref-media"><img src="assets/img/references/flores.webp" alt="Bastidores" loading="lazy"/></div>
+        <figcaption><b>Bastidores</b><span>Espaço livre para foto</span></figcaption>
+      </figure>
+      <figure class="ref-tile">
+        <div class="ref-media logo"><img src="assets/img/logos/mc-zaac.webp" alt="MC Zaac e Jerry Smith" loading="lazy"/></div>
+        <figcaption><b>MC Zaac &amp; Jerry Smith</b><span>Identidade Visual · Música</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS (texto gerado a partir da stack do portfólio atual, revisar) ============ -->
+<section class="services section" id="servicos">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">O que eu faço</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <div class="split-head">
+      <h2 class="h2" data-anim="title">Das duas pontas de um produto: arquitetura e interface.</h2>
+      <p class="lead" data-anim="fade-up">Um só profissional cuidando do banco, da API, da interface e da identidade visual, sem ruído entre áreas.</p>
+    </div>
+
+    <div class="service-list">
+      <article class="service-card" data-slide="right">
+        <div class="service-img"><img src="assets/img/services/01-fullstack.webp" alt="" width="1600" height="1000" loading="lazy"/></div>
+        <div class="service-body">
+          <div class="service-main"><span class="service-num">01.</span><h3>Desenvolvimento Full-Stack</h3><p>Aplicações full-stack, SSR e rotas de API em produção.</p></div>
+          <ul class="service-points"><li>Next.js &amp; React</li><li>Supabase / Postgres com RLS</li><li>Integrações de API</li><li>Deploy &amp; versionamento</li></ul>
+        </div>
+      </article>
+      <article class="service-card" data-slide="left">
+        <div class="service-img"><img src="assets/img/services/02-arte.webp" alt="" width="1600" height="1000" loading="lazy"/></div>
+        <div class="service-body">
+          <div class="service-main"><span class="service-num">02.</span><h3>Direção de Arte</h3><p>Identidade visual, UI dark/glass e sistemas de design.</p></div>
+          <ul class="service-points"><li>Identidade visual</li><li>UI / UX</li><li>Design systems</li><li>Direção criativa</li></ul>
+        </div>
+      </article>
+      <article class="service-card" data-slide="right">
+        <div class="service-img"><img src="assets/img/services/03-motion.webp" alt="" width="1600" height="1000" loading="lazy"/></div>
+        <div class="service-body">
+          <div class="service-main"><span class="service-num">03.</span><h3>Motion &amp; 3D</h3><p>GSAP, Three.js e animação de interface aplicada a produto.</p></div>
+          <ul class="service-points"><li>GSAP &amp; ScrollTrigger</li><li>Three.js</li><li>Blender</li><li>After Effects</li></ul>
+        </div>
+      </article>
+      <article class="service-card" data-slide="left">
+        <div class="service-img"><img src="assets/img/services/04-produto.webp" alt="" width="1600" height="1000" loading="lazy"/></div>
+        <div class="service-body">
+          <div class="service-main"><span class="service-num">04.</span><h3>Produtos &amp; SaaS</h3><p>Do banco de dados à interface: produtos digitais pensados para escalar e gerar resultado.</p></div>
+          <ul class="service-points"><li>Analytics</li><li>IA (Google Gemini)</li><li>Integração iFood</li><li>Arquitetura de dados</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK + NÚMEROS ============ -->
+<section class="skills section" id="stack">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Stack técnica</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <div class="split-head">
+      <h2 class="h2" data-anim="title">Ferramentas que uso todo dia.</h2>
+      <p class="lead" data-anim="fade-up">Sem métricas de cliente infladas, só o que eu de fato entrego e como distribuo meu tempo.</p>
+    </div>
+
+    <div class="skills-grid" data-anim="stagger">
+      <div class="skill-card"><span>01</span><h3>Next.js &amp; React</h3><p>Aplicações full-stack, SSR e rotas de API em produção.</p></div>
+      <div class="skill-card"><span>02</span><h3>Supabase / Postgres</h3><p>Modelagem de banco, RLS, triggers e autenticação por papel.</p></div>
+      <div class="skill-card"><span>03</span><h3>Integrações de API</h3><p>Consumo de APIs externas (iFood Merchant, Google Gemini) em produtos reais.</p></div>
+      <div class="skill-card"><span>04</span><h3>Deploy &amp; Versionamento</h3><p>Vercel para deploy contínuo, Git para controle de versão.</p></div>
+      <div class="skill-card"><span>05</span><h3>Motion &amp; 3D</h3><p>GSAP, Three.js e animação de interface aplicada a produto.</p></div>
+      <div class="skill-card"><span>06</span><h3>Direção de Arte</h3><p>Identidade visual, UI dark/glass e sistemas de design.</p></div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card" data-anim="fade-up">
+        <div class="chart-head"><h3>Distribuição de habilidades</h3><p>Autoavaliação, escala de 0 a 100</p></div>
+        <div class="bars">
+          <div class="bar"><span>Frontend</span><div class="bar-track"><i data-w="92"></i></div><em>92</em></div>
+          <div class="bar"><span>Backend</span><div class="bar-track"><i data-w="85"></i></div><em>85</em></div>
+          <div class="bar"><span>Banco de Dados</span><div class="bar-track"><i data-w="80"></i></div><em>80</em></div>
+          <div class="bar"><span>Design/UI</span><div class="bar-track"><i data-w="90"></i></div><em>90</em></div>
+          <div class="bar"><span>DevOps</span><div class="bar-track"><i data-w="70"></i></div><em>70</em></div>
+          <div class="bar"><span>Motion</span><div class="bar-track"><i data-w="78"></i></div><em>78</em></div>
+        </div>
+      </div>
+      <div class="chart-card" data-anim="fade-up">
+        <div class="chart-head"><h3>Como o tempo se divide</h3><p>Média semanal aproximada</p></div>
+        <div class="donut-wrap">
+          <svg class="donut" viewBox="0 0 200 200" role="img" aria-label="Engenharia 55%, Direção de Arte 30%, Descoberta/Produto 15%">
+            <circle class="donut-bg" cx="100" cy="100" r="70"/>
+            <circle class="donut-seg" cx="100" cy="100" r="70" data-pct="55" data-offset="0"  stroke="#3b82ff"/>
+            <circle class="donut-seg" cx="100" cy="100" r="70" data-pct="30" data-offset="55" stroke="#eaf1ff"/>
+            <circle class="donut-seg" cx="100" cy="100" r="70" data-pct="15" data-offset="85" stroke="#5b5b62"/>
+            <text x="100" y="98" text-anchor="middle" class="donut-big">55%</text>
+            <text x="100" y="118" text-anchor="middle" class="donut-small">engenharia</text>
+          </svg>
+          <ul class="legend">
+            <li><i style="background:#3b82ff"></i>Engenharia <b>55%</b></li>
+            <li><i style="background:#eaf1ff"></i>Direção de Arte <b>30%</b></li>
+            <li><i style="background:#5b5b62"></i>Descoberta/Produto <b>15%</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO (6 princípios do portfólio atual) ============ -->
+<section class="manifesto section" id="manifesto">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Manifesto</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <h2 class="h2 center" data-anim="title">Como penso e trabalho.</h2>
+
+    <div class="bento" data-anim="stagger">
+      <div class="bento-card b-a"><div class="bento-num">01</div><h3>Ideias como Essência</h3><p>Cada projeto brilha quando infundido com uma ideia central que permeia todos os aspectos de seu design.</p></div>
+      <div class="bento-card b-b"><div class="bento-num">02</div><h3>Colaboração Transparente</h3><p>O trabalho prospera na abertura. Design é um esforço coletivo, cliente e engenheiro precisam ser parceiros reais.</p></div>
+      <div class="bento-card b-c"><div class="bento-num">03</div><h3>Adaptabilidade</h3><p>Desafios trazem complexidades. Soluções flexíveis que trazem ordem ao caos são mais valiosas que rigidez estética.</p></div>
+      <div class="bento-card b-d"><div class="bento-num">04</div><h3>Engenhosidade</h3><p>A verdadeira singularidade vem de abordagens não convencionais, não apenas de técnica de código impecável.</p></div>
+      <div class="bento-card b-e"><div class="bento-num">05</div><h3>Consistência Estruturada</h3><p>Sistemas seguem um pipeline rigoroso. Isso garante estabilidade e resultados previsíveis em produção.</p></div>
+      <div class="bento-card b-f"><div class="bento-num">06</div><h3>Significado Simbólico</h3><p>Design metafórico transforma o mundano em extraordinário. Cada elemento visual e estrutural tem razão de existir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ (texto gerado, revisar) ============ -->
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Perguntas rápidas</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <div class="faq-grid">
+      <h2 class="h2" data-anim="title">Antes de começarmos, o que importa.</h2>
+      <div class="faq-list" data-anim="fade-up">
+        <div class="faq-item open">
+          <button class="faq-q" type="button" aria-expanded="true"><span>Que tipo de projeto você aceita?</span><i class="plus"><b></b><b></b></i></button>
+          <div class="faq-a"><p>Sistemas web full-stack, produtos SaaS, integrações de API, bancos de dados e direção de arte para interfaces e identidades visuais.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>Como funciona o processo?</span><i class="plus"><b></b><b></b></i></button>
+          <div class="faq-a"><p>Entendo o problema, desenho a arquitetura e a interface, construo em ciclos curtos com entregas visíveis e publico com deploy contínuo.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>Quanto tempo leva um projeto?</span><i class="plus"><b></b><b></b></i></button>
+          <div class="faq-a"><p>Depende do escopo. Depois de uma conversa inicial passo uma estimativa clara de prazo e de entregas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>Você faz design e código no mesmo projeto?</span><i class="plus"><b></b><b></b></i></button>
+          <div class="faq-a"><p>Sim. Front, back e identidade visual sem terceirizar, menos ruído entre áreas e mais consistência no resultado.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>Dá para continuar um sistema que já existe?</span><i class="plus"><b></b><b></b></i></button>
+          <div class="faq-a"><p>Dá. Faço a leitura do que existe, resolvo gargalos de performance e evoluo o produto sem começar do zero.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>Como começamos?</span><i class="plus"><b></b><b></b></i></button>
+          <div class="faq-a"><p>Me escreva em erickmkdev@gmail.com contando a ideia. Respondo com os próximos passos.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCALIZAÇÃO (OpenStreetMap, estático e leve) ============ -->
+<section class="location section" id="localizacao">
+  <div class="container">
+    <div class="section-top" data-anim="caption">
+      <div class="section-caption"><span class="caption-icon"></span><span class="caption-text">Localização</span></div>
+      <div class="section-tag">@ericksmatias</div>
+    </div>
+    <h2 class="h2 center" data-anim="title">Baseado em Fortaleza.</h2>
+  </div>
+  <div class="map-wrap" id="mapWrap">
+    <div class="map-view" role="img" aria-label="Mapa de Fortaleza, Ceará">
+      <div class="map-base"><div class="map-tiles"><img src="https://tile.openstreetmap.org/13/3217/4179.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3218/4179.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3219/4179.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3220/4179.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3221/4179.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3217/4180.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3218/4180.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3219/4180.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3220/4180.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3221/4180.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3217/4181.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3218/4181.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3219/4181.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3220/4181.png" width="256" height="256" alt="" loading="lazy" decoding="async"/><img src="https://tile.openstreetmap.org/13/3221/4181.png" width="256" height="256" alt="" loading="lazy" decoding="async"/></div></div>
+      <div class="map-vignette"></div>
+      <i class="map-pin"></i>
+      <div class="map-label"><i class="dot green"></i><div><div class="map-city">FORTALEZA, CE</div><div class="map-coords">-3.73° S · -38.53° O</div></div></div>
+      <a class="map-open" href="https://www.openstreetmap.org/?mlat=-3.7319&amp;mlon=-38.5267#map=13/-3.7319/-38.5267" target="_blank" rel="noopener">Abrir mapa ↗</a>
+      <span class="map-credit">© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ CONTATO / FOOTER ============ -->
+<footer class="footer" id="contato">
+  <div class="container">
+    <div class="footer-cta">
+      <div class="mono-eyebrow" data-anim="fade-up">Vamos conversar</div>
+      <h2 class="footer-title" data-anim="title">Qual o seu sonho?<br/>Me conta!</h2>
+      <p class="lead center" data-anim="fade-up">Disponível para desenvolvimento full-stack, produtos próprios e direção de arte.</p>
+      <div class="footer-actions" data-anim="fade-up">
+        <a href="mailto:erickmkdev@gmail.com" class="icon-btn icon-btn-lg" aria-label="Enviar e-mail" title="Enviar e-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></a>
+        <a class="icon-btn icon-btn-lg" role="button" tabindex="0" data-soon aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+        <a class="icon-btn icon-btn-lg" role="button" tabindex="0" data-soon aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" class="dot"/></svg></a>
+        <button type="button" class="icon-btn icon-btn-lg" id="copyLink" aria-label="Copiar link" title="Copiar link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <a href="#top" class="nav-logo"><img src="assets/logo.png" alt="" width="26" height="26"/><span>ERICK MATIAS</span></a>
+      <nav class="footer-links" aria-label="Links rápidos">
+        <a href="#sobre" data-menu-link><span class="roll"><span>Sobre</span><span>Sobre</span></span></a>
+        <a href="#projetos" data-menu-link><span class="roll"><span>Projetos</span><span>Projetos</span></span></a>
+        <a href="#servicos" data-menu-link><span class="roll"><span>O que faço</span><span>O que faço</span></span></a>
+        <a href="#stack" data-menu-link><span class="roll"><span>Stack</span><span>Stack</span></span></a>
+        <a href="mailto:erickmkdev@gmail.com"><span class="roll"><span>Email</span><span>Email</span></span></a>
+      </nav>
+      <p class="footer-copy">© 2026 Erick Matias, Fortaleza, BR</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Link copiado!</div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
