@@ -69,8 +69,8 @@ localização, contato e contadores (2 sistemas, 7 anos, 100% stack próprio; "8
 
 ## Atualização v5
 
-- Sem o sistema de bar e sem a Aurora (card, cliente e textos removidos). Projetos agora são 10.
-- Capas dos projetos 02 a 06 são **mockups gerados** (`assets/img/projects/02-...06-...webp`). Os números e textos dentro deles são fictícios; troque por prints reais quando tiver.
+- Sem o sistema de bar e sem a Aurora (card, cliente e textos removidos). Restam 5 projetos (iFood API, Agilizone, Privatido, Partido Missão e Google foram removidos).
+- Imagens de serviços geradas no Gemini (`assets/img/services/`).
 - Logos de clientes reais (do site antigo) em `assets/img/logos/`.
 - Botões de GitHub, Instagram, e-mail e copiar link agora são ícones. GitHub e Instagram continuam sem link (atributo `data-soon`); para ativar, troque por `href="..."` e remova `data-soon`.
 - Tela de entrada com spinner branco (~1 s). Logo 3D no hero (`js/vendor/model-viewer.min.js`), com versão leve (PNG girando) em aparelhos fracos.
